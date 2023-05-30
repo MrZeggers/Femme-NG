@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+    <link rel="stylesheet" href="ProyectoNG-Aspecto.css">
+<head>
+    <title>Encriptador NG "Ma Femme"</title>
+</head>
+<body>
+
+    <div class="header-content">
+        <img class="Logo-NG" src="LOGO NG.png" alt="logo">
+        <h1 class="titulo">Encriptador de Texto NG</h1>
+        
+    </div>
+    
+    <div class="centered-content">
+        <div class="input-container">
+            <textarea class="TextoPrincipal" id="input" placeholder="Escribe tu texto aqui..."></textarea>
+            <div class="buttons-container">
+                <button id="encryptButton">Encriptar</button>
+                <button id="decryptButton">Desencriptar</button>
+            </div>
+        </div>
+        <div class="output-container">
+            <img class="img-secundaria" src="Texto 2.png" alt="muchacha sentanda con computadora">
+            <textarea class="TextoSecundario" id="output" placeholder=" Aqui aparecera el texto encriptado/desencriptado"></textarea>
+            <button id="copyButton">Copiar</button>
+        </div>
+    </div>
+
+    <script>
+        const dictionary = {
+            'e': 'enter',
+            'i': 'imes',
+            'a': 'ai',
+            'o': 'ober',
+            'u': 'ufat'
+        };
+
+        function encrypt(input) {
+            let output = '';
+            for (let i = 0; i < input.length; i++) {
+                if (dictionary[input[i]]) {
+                    output += dictionary[input[i]];
+                } else {
+                    output += input[i];
+                }
+            }
+            return output;
+        }
+
+        function decrypt(input) {
+            let output = input;
+            for (let key in dictionary) {
+                output = output.split(dictionary[key]).join(key);
+            }
+            return output;
+        }
+
+        document.getElementById('encryptButton').addEventListener('click', function() {
+            let inputText = document.getElementById('input').value;
+            let encryptedText = encrypt(inputText);
+            document.getElementById('output').value = encryptedText;
+        });
+
+        document.getElementById('decryptButton').addEventListener('click', function() {
+            let inputText = document.getElementById('input').value;
+            let decryptedText = decrypt(inputText);
+            document.getElementById('output').value = decryptedText;
+        });
+
+        document.getElementById('copyButton').addEventListener('click', function() {
+            let outputText = document.getElementById('output');
+            outputText.select();
+            document.execCommand('copy');
+        });
+    </script>
+</body>
+</html>
+

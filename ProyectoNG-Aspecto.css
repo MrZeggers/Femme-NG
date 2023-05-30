@@ -1,0 +1,94 @@
+.Logo-NG {
+    width: 250px;
+    position: absolute;
+    top: -30px;
+    left: -30px;
+}
+
+.titulo{
+    position: absolute;
+    top: 50px;
+    left: 220px;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  
+    justify-content: center;
+    height: 100vh;
+    background-color: #F3F5FC;
+}
+
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;  
+}
+
+.TextoPrincipal {
+    width: 577px;
+    height: 48px;
+    position: absolute;
+    top: 168px;
+    left: 240px;
+    border: none;
+    background-color: #F3F5FC;
+    font-size: 16px;
+    padding: 10px;
+}
+
+button {
+    padding: 24px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 24px;
+}
+
+#encryptButton, #decryptButton {
+    width: 328px;
+    height: 67px;
+}
+
+
+
+
+
+.TextoSecundario {
+    width: 400px;
+    height: 744px;
+    position: absolute;
+    top: 40px;
+    left: 1400px;
+    border-radius: 32px;
+    background-color: #F3F5FC;
+    font-size: 16px;
+    padding: 10px;
+}
+
+#copyButton {
+    position: absolute;
+    top: 820px;
+    left: 1450px;
+    width: 328px;
+    height: 67px;
+}
+
+
+.img-secundaria {
+    position: absolute;
+    top: -210px; /* Esto moverá la imagen hacia arriba por encima del cuadro de texto */
+    left: 10px;
+    width: 380px;
+    height: 200px;
+}
+
+
+
